@@ -237,3 +237,17 @@ ps: 将HEAD指向之前的commit，或指定的commit，并回退到那个版本
 ### 
 
 ##### rebase & merge
+
+merge会保留所有的commit记录，但也会污染commit记录
+
+rebase是将待合并分支的commit拼接到原分支上
+
+> 1-2-3 是现在的分支状态
+> 这个时候从原来的 master , checkout 出来一个 prod 分支
+> 然后 master 提交了4.5，prod 提交了6.7
+> 这个时候 master 分支状态就是1-2-3-4-5，prod 状态变成1-2-3-6-7
+> 如果在 prod 上用 rebase master , prod 分支状态就成了1-2-3-4-5-6-7
+> 如果是 merge
+> 1-2-3-6-7-8
+> ........ |4-5|
+> 会出来一个8，这个8的提交就是把4-5合进来的提交
