@@ -2,20 +2,20 @@
 
 ### 刚开始使用git (beginer)
 
-- 克隆远端仓库到本地
+- 克隆远程仓库到本地
 
 ```
 git clone https://xxxxxxxxx
 ```
 
-- 查看远端仓库地址，拉取当前分支
+- 查看远程仓库地址，拉取当前分支
 
 ```
-git remote -v                                    查看远端仓库地址
-git remote update origin --prune                 更新远端仓库地址
-git fetch                                        更新远端仓库
-git pull                                         拉取远端分支
-git pull origin 远程分支明                        拉取指定的远程分支
+git remote -v                                    查看远程仓库地址
+git remote update origin --prune                 更新远程仓库地址
+git fetch                                        更新本地的远程仓库信息
+git pull                                         拉取远程分支
+git pull origin 远程分支名                        拉取指定的远程分支
 ```
 
 - 任意修改后，将修改文件添加至暂存区
@@ -78,20 +78,21 @@ ps: checkout 会自动识别是否存在远程分支，如果存在，则创建�
 - 创建自己的本地分支并主动关联至远程分支
 
 ```
-git checkout -b 本地分支名
-git push origin 远程分支名                    
+git checkout -b 本地分支名                          新建本地分支
+git push origin 远程分支名                          新建远程分支
 git branch --set-upstream-to=origin/远程分支名 本地分支名    
 
-git branch --set-upstream-to 本地分支名 origin/远端分支名 重新关联新的远程分支
+git branch --set-upstream-to 本地分支名 origin/远程分支名 重新关联新的远程分支
 
-ps: 本地创建远程分支操作复杂且易混乱，建议直接在仓库创建，使用 fetch + checkout 管理
+ps: 本地创建远程分支操作复杂且易混乱，建议直接在仓库创建，使用 fetch + checkout 管理。
+但前提是公司内git仓库允许手动操作，否则github默认不允许手动创建、删除分支。
 ```
 
 ---
 
 
 
-### 当你修改了修改代码 (modified)
+### 当你修改了代码 (modified)
 
 - 查看修改了哪些文件
 
@@ -103,7 +104,7 @@ git diff 文件名                                     查看该文件修改细�
 - 删除未保存到缓存区的修改
 
 ```
-git checkout .                                     舍弃全部本地修改（慎用）
+git checkout .                                     舍弃全部本地未add的修改（慎用）
 git checkout 文件名                                 舍弃某一文件的修改
 ```
 
@@ -166,7 +167,7 @@ git pull upstream 原仓库分支名 即可更新
 
 -----------------------------------------------------------
 
-================================= 这是一条假装很好看的分割线 =================================
+<font color=#F5F8FA>======================================= 这是一条假装很好看的分割线 =======================================</font>
 
 -----------------------------------------------------------
 
@@ -198,7 +199,7 @@ Step 5. git push
 ```
 git revert HEAD^                                  撤销前一次commit
 git revert HEAD^^                                 撤销前前一次commit
-git revert commit SHA                             git log里拿到的SHA或者reflog拿到的短的或者远端提前后面那串短的
+git revert commit SHA                             git log里拿到的SHA或者reflog拿到的短的或者远程提前后面那串短的
 
 ps: git revert是提交一个新版本，这个新版本把要revert的内容反向修改回去，俗称中和，会改变源码，但不影响之后提交的内容
 ```
