@@ -2,6 +2,28 @@
 
 ### 刚开始使用git (beginer)
 
+- 创建一个新的仓库 (create a new repository on the command line)
+
+```
+echo "# 仓库名" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://xxxxxxxxx
+git push -u origin main
+```
+
+
+- 自己创建了项目并关联已经新建的远程仓库，创建仓库操作可以直接在github上 (push an existing repository from the command line)
+
+```
+git remote add origin https://xxxxxxxxx
+git branch -M main
+git push -u origin main
+```
+
+
 - 克隆远程仓库到本地
 
 ```
