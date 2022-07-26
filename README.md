@@ -150,8 +150,6 @@ ps: stash pop时不要pop错分支，否则会有意想不到的conflict需要me
 git merge --abort                                撤销merge，使用该命令其实往往发生在你和另一位朋友在没有互相沟通的情况下私自去掉了部分对方的冲突代码，导致项目报错（笑，是吧龙哥
 ```
 
-
-
 ----
 
 
@@ -212,8 +210,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 find ./ -name ".DS_Store" -depth -exec rm {} \;
 ```
 
-
-
 ----
 
 
@@ -229,9 +225,9 @@ git fetch upstream
 git pull upstream 原仓库分支名 即可更新
 ```
 
-
-
 -----------------------------------------------------------
+
+----
 
 
 
@@ -304,4 +300,6 @@ ps: 将HEAD指向之前的commit，或指定的commit，并回退到那个版本
 
 ps: rebase并不适用于多人维护的分支，原因尚未实操核实，以目前的开发经验来看，merge确实会污染合并提交记录，但会完整保留全部记录。多人开发的分支一般都用merge。
 ```
+
+----
 
