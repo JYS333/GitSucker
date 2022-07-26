@@ -45,9 +45,10 @@ git pull origin 远程分支名                        拉取指定的远程分�
 - 任意修改后，将修改文件添加至暂存区
 
 ```
-git add .                                        添加本地修改至本地仓库
+git add .                                        添加所有本地修改至本地仓库
+git add 文件名                                    添加某一文件的修改至本地仓库
 
-git restore —staged 文件名                        取消add
+git restore —staged 文件名                        取消add某一文件
 ```
 
 - 提交修改
@@ -140,10 +141,18 @@ git stash pop                                     将先前save的修改恢复
 git stash list                                    查看当前stash了哪些
 git stash drop xxx                                删除指定stash
 
-ps: stash pop时不要pop错分支
+ps: stash pop时不要pop错分支，否则会有意想不到的conflict需要merge
 ```
 
----
+- merge后的本地修改如果不想要，或者merge错了
+
+```
+git merge --abort                                撤销merge，使用该命令其实往往发生在你和另一位朋友在没有互相沟通的情况下私自去掉了部分对方的冲突代码，导致项目报错（笑，是吧龙哥
+```
+
+
+
+----
 
 
 
