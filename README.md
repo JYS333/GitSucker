@@ -200,7 +200,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 - 在终端中找到 `.DS_Store` 文件的目录，输入以下命令即可删除（因为本地是隐藏该文件的）
 
 ```
-find . -name ‘.DS_Store’ -type f -delete
+find ./ -name ".DS_Store" -depth -exec rm {} \;
 ```
 
 
