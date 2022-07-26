@@ -172,7 +172,35 @@ git config --global credential.helper store 完了pull一次输入账号密码�
 本条针对JD：公司erp且mac电脑，修改记得先更新电脑开机密码，再改本地存储密码，再用自带terminal pull一遍，最后vscode才能用
 ```
 
----
+- Mac系统在使用git时常常会将自动生成的 `.DS_Store` 文件也上传至仓库，这是不应该的
+- 该文件为Mac的desktop service文件，是本地用来规范桌面文件的一些自定义属性的，包括文件图标的位置、文件夹上次打开时窗口的大小、展现形式和位置等。这有助于保留为特定文件夹配置的设置，例如，将桌面文件夹设置为查看按名称排序的图标，同时将下载文件夹配置为将文件显示为列表并按日期排序，最近修改的先显示
+- Step1. 使用以下命令将  `. DS_Store`  加入全局的  `.gitignore`  文件
+
+```
+echo .DS_Store >> ~/.gitignore_global
+```
+
+- Step2. 将这个全局的 .gitignore 文件加入Git的全局config文件中，在这以后他就不会再出现在Git仓库中了
+
+```
+git config --global core.excludesfile ~/.gitignore_global
+```
+
+- 在终端中输入以下命令可以阻止 `.DS_Store` 文件自动生成，好坏自辩
+
+```
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+```
+
+- 在终端中找到 `.DS_Store` 文件的目录，输入以下命令即可删除（因为本地是隐藏该文件的）
+
+```
+find . -name ‘.DS_Store’ -type f -delete
+```
+
+
+
+----
 
 
 
