@@ -1,7 +1,4 @@
 # GitSucker
-Let's learn some Git! ;)
-
-----
 
 ## git基础操作
 
