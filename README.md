@@ -60,6 +60,30 @@ git commit --amend                         	     修改commit文本
 i + esc + :wq                                    进入编辑模式，退出并保存
 ```
 
+- commit规范，重点关注 `:` 前的<type>字段
+
+```
+标准格式：type（必需）、scope（可选）和subject（必需）空一行后 <body>(可选)
+<type>(<scope>): <subject>
+// 空一行
+<body>
+
+But...一般人不会写这么细，不然每次提交都累死，所以一般只需要关注 <type> 和 <subject> 即可
+
+type种类：
+br: 此项特别针对bug号，用于向测试反馈bug列表的bug修改情况
+feat：新功能（feature）
+fix：修补bug
+docs：文档（documentation）
+style： 格式（不影响代码运行的变动）
+refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+test：增加测试
+chore：构建过程或辅助工具的变动
+revert: feat(pencil): add 'graphiteWidth' option (撤销之前的commit)
+
+一个🌰：git commit -m "feat: 新增首页按钮一键赚取100w美元的功能"
+```
+
 - 推送
 
 ```
@@ -147,7 +171,7 @@ ps: stash pop时不要pop错分支，否则会有意想不到的conflict需要me
 - merge后的本地修改如果不想要，或者merge错了
 
 ```
-git merge --abort                                撤销merge，使用该命令其实往往发生在你和另一位朋友在没有互相沟通的情况下私自去掉了部分对方的冲突代码，导致项目报错（笑，是吧龙哥
+git merge --abort                                撤销merge，使用该命令其实往往发生在你和另一位朋友在没有互相沟通的情况下私自去掉了部分对方的冲突代码，导致项目报错，然后还不得不revert回去再改一遍（笑，是吧龙哥
 ```
 
 ----
