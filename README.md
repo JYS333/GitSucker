@@ -71,7 +71,6 @@ i + esc + :wq                                    进入编辑模式，退出并�
 But...一般人不会写这么细，不然每次提交都累死，所以一般只需要关注 <type> 和 <subject> 即可
 
 type种类：
-br: 此项特别针对bug号，用于向测试反馈bug列表的bug修改情况
 feat：新功能（feature）
 fix：修补bug
 docs：文档（documentation）
@@ -80,6 +79,8 @@ refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 test：增加测试
 chore：构建过程或辅助工具的变动
 revert: feat(pencil): add 'graphiteWidth' option (撤销之前的commit)
+
+以上只是基本通用的几个type，各个公司内部可能会有一些自己的拓展规定
 
 一个🌰：git commit -m "feat: 新增首页按钮一键赚取100w美元的功能"
 ```
