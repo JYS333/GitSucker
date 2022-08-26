@@ -1,5 +1,3 @@
-# GitSucker
-
 ## git基础操作
 
 ### 刚开始使用git (beginer)
