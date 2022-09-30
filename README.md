@@ -46,6 +46,12 @@ git add .                                        # 添加所有本地修改至�
 git add 文件名                                    # 添加某一文件的修改至本地仓库
 
 git restore —staged 文件名                        # 取消add某一文件
+
+ps: git add 的一个小知识，当你发现git add文件失效时，优先考虑是否是在项目根目录下add的，不行再用 --all
+git add . 会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。
+git add -u  仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u
+不会提交新文件（untracked file）。（git add --update的缩写）
+git add -A ：是上面两个功能的合集（git add --all的缩写）
 ```
 
 - 提交修改
