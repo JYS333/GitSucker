@@ -1,27 +1,19 @@
+欢迎查看我的掘金文章，更新更准确: https://juejin.cn/post/7142728775782891557
+
 # git基础操作
 
 ### 刚开始使用git (beginer)
 
-- 创建一个新的仓库 (create a new repository on the command line)
+- 自己创建一个项目，并创建了一个git仓库，将两者关联起来 (create a new repository on the command line)
 
 ```makefile
-echo "# 仓库名" >> README.md
-git init
-git add README.md
+git init                                        # 在本地项目目录下执行
+git add README.md                               # 可以不加
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://xxxxxxxxx
+git remote add origin https://xxxxxxxxx         # 新建的git仓库地址
 git push -u origin main
 ```
-
-- 自己创建了项目并关联已经新建的远程仓库，创建仓库操作可以直接在github上 (push an existing repository from the command line)
-
-```makefile
-git remote add origin https://xxxxxxxxx
-git branch -M main
-git push -u origin main
-```
-
 
 - 克隆远程仓库到本地
 
@@ -36,7 +28,7 @@ git remote -v                                    # 查看远程仓库地址
 git remote update origin --prune                 # 更新远程仓库地址
 git fetch                                        # 更新本地的远程仓库信息
 git pull                                         # 拉取远程分支
-git pull origin 远程分支名                         # 拉取指定的远程分支
+git pull origin 远程分支名                        # 拉取指定的远程分支
 ```
 
 - 任意修改后，将修改文件添加至暂存区
@@ -114,7 +106,7 @@ git branch -a                                     # 查看远程分支
 
 ```makefile
 git branch -d 本地分支名                            # 删除出当前本地分支外的一个本地分支，-D强制删除
-git push origin —delete 远程分支名                  # 删除一个指定的远程分支（慎用）
+git push origin --delete 远程分支名                  # 删除一个指定的远程分支（慎用）
 
 ps: `-d` 前确保本低分支已无可用提交，git也会提醒你，`-delete` 可以直接在repo上操作，不可撤销，谨慎使用
 ```
